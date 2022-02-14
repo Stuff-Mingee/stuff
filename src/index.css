@@ -1,13 +1,235 @@
+* {
+  box-sizing: border-box;
+}
+a:-webkit-any-link {
+  text-decoration: none;
+  color: inherit;
+}
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+.container {
+  width: 100%;
+  margin: 0 auto;
+}
+.d-flex {
+  display: flex;
+}
+article {
+  padding: 20px 0;
+}
+
+/* ======================= FORM ==================== */
+select,
+input {
+  -webkit-appearance: button;
+  -moz-appearance: button;
+  -webkit-padding-end: 5px;
+  -moz-padding-end: 5px;
+  -webkit-padding-start: 5px;
+  -moz-padding-start: 10px;
+  background-color: #f2f3f4;
+  background-position: center right;
+  background-repeat: no-repeat;
+  border: 1px solid #e1e1e1f1;
+  border-radius: 4px;
+  box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.1);
+  color: #555;
+  font-size: inherit;
+  margin: 0;
+  overflow: hidden;
+  padding-top: 6px;
+  padding-bottom: 6px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  min-width: 200px;
+}
+
+button {
+  border: 1px solid #e1e1e1f1;
+  border-radius: 4px;
+  padding: 0 16px;
+  transition: 0.2s;
+  cursor: pointer;
+}
+
+button:hover {
+  border: 1px solid rgb(116, 116, 116);
+  background-color: #242d38;
+  color: #fff;
+}
+
+/* ======================= HEADER ==================== */
+
+header {
+  height: 52px;
+  background: #242d38;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  color: white;
+  padding: 0 20px;
+}
+
+header .title {
+  font-size: xx-large;
+  font-weight: 800;
+}
+
+/* ======================= FILTER ==================== */
+.filter-block {
+  display: flex;
+  gap: 20px;
+  padding: 10px;
+  background-color: #fbfbfb;
+  border: 1px solid #f1efef;
+  border-radius: 4px;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+/* ======================= STORIES PAGE ==================== */
+.stories-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  grid-gap: 20px;
+  align-items: stretch;
+}
+
+/* === STORY CARD ==== */
+.story-card {
+  border: 1px solid #f1efef;
+  box-shadow: 0px 1px 3px 0px rgb(0 0 0 / 30%);
+  padding: 10px;
+  margin: 10px;
+  display: grid;
+  height: 100%;
+}
+
+.story-card:hover {
+  cursor: pointer;
+  border: 1px solid #242d38;
+  box-shadow: 0px 1px 3px 0px #242d384d;
+}
+
+.story-card img {
+  max-width: 100%;
+  max-height: 250px;
+  object-fit: cover;
+  width: 100%;
+}
+
+.story-card .text {
+  padding: 20px;
+}
+
+/* ======================= STORY DETAILS PAGE ==================== */
+
+.story-details {
+  padding: 50px 20px;
+}
+
+.story-details .title-block {
+  display: flex;
+  align-items: flex-start;
+  gap: 20px;
+  margin: 50px 0;
+}
+
+.story-details h1 {
+  font-size: 3rem;
+}
+
+.story-details p {
+  font-size: 16px;
+}
+
+.story-details img {
+  float: left;
+  padding: 20px 20px 20px 0;
+  max-height: 500px;
+
+  object-fit: cover;
+}
+
+/* ======================= MEDIA QUERIES ==================== */
+
+@media (max-width: 576px) {
+  select,
+  input {
+    min-width: auto;
+  }
+  .container {
+    max-width: 540px;
+  }
+  .story-details {
+    padding: 20px;
+  }
+
+  .story-details h1 {
+    font-size: 32px;
+  }
+
+  .story-details p {
+    font-size: 16px;
+  }
+
+  .story-details img {
+    float: left;
+    padding: 20px 20px 20px 0;
+    max-height: 500px;
+
+    object-fit: cover;
+  }
+}
+@media (min-width: 577px) and (max-width: 768px) {
+  select,
+  input {
+    min-width: auto;
+  }
+  .container {
+    max-width: 720px;
+  }
+  .story-details {
+    padding: 20px;
+  }
+
+  .story-details h1 {
+    font-size: 3rem;
+  }
+
+  .story-details p {
+    font-size: 16px;
+  }
+
+  .story-details img {
+    float: left;
+    padding: 20px 20px 20px 0;
+    max-height: 500px;
+
+    object-fit: cover;
+  }
+}
+@media (max-width: 992px) {
+  .container {
+    max-width: 960px;
+  }
+}
+@media (max-width: 1200px) {
+  .container {
+    max-width: 1140px;
+  }
+}
+@media (min-width: 1400px) {
+  .container {
+    max-width: 1320px;
+  }
 }
