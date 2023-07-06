@@ -1,4 +1,4 @@
-import { Helmet } from "react-helmet";
+import { Helmet } from "react-helmet-async";
 import { IStory } from "../models/models";
 export function MetaDecorator({ story }: MetaDecoratorProps) {
     return (
