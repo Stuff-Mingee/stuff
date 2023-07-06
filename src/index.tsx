@@ -8,13 +8,13 @@ import { store } from "./app/store";
 import { HelmetProvider } from "react-helmet-async";
 
 ReactDOM.render(
-  <React.StrictMode>
-    <HelmetProvider>
-    <Provider store={store}>
-      <App />
-    </Provider>
-    </HelmetProvider>
-  </React.StrictMode>,
+  <HelmetProvider>
+    <React.StrictMode>
+      <Provider store={store}>
+        <App />
+      </Provider>
+    </React.StrictMode>
+  </HelmetProvider>,
   document.getElementById("root")
 );
 
